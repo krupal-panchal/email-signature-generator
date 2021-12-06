@@ -1,0 +1,857 @@
+<html>
+    <head>
+        <title>Email Signature Generator</title>
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+    <body>
+        <div class="signature-block">
+            <div class="sign-options">
+                <div class="tabbing-block">
+                    <ul class="tabs">
+                        <li class="tab-link current" data-tab="tab-1">
+                            <img src="https://threshmedia.com/wp-content/themes/threshmedia/assets/images/tab1.png" alt="" title="Select Your Layout">
+                        </li>
+                        <li class="tab-link" data-tab="tab-2">
+                            <img src="https://threshmedia.com/wp-content/themes/threshmedia/assets/images/tab2.png" alt="" title="Enter Your Details">
+                        </li>
+                        <li class="tab-link" data-tab="tab-3">
+                            <img src="https://threshmedia.com/wp-content/themes/threshmedia/assets/images/tab3.png" alt="" title="Customize Your Signature">
+                        </li>
+                        <li class="tab-link" data-tab="tab-4">
+                            <img src="https://threshmedia.com/wp-content/themes/threshmedia/assets/images/tab4.png" alt="" title="Upload Your Signature Images">
+                        </li>
+                    </ul>
+                    <!-- Tab 1 -->
+                    <div id="tab-1" class="tab-content current">
+                        <h3>Select Your Layout</h3>
+                        <!-- Templates -->
+                        <a href="javascript:void(0);" class="template-block active" data-temp="et1">
+                            <p>Template 1</p>
+                            <div class="temp-img-wrap">
+                                <img src="https://threshmedia.com/wp-content/uploads/2021/11/temp-1.png" class="temp-copy" alt="">
+                                <img src="https://threshmedia.com/wp-content/uploads/2021/11/check-img.png" class="check-img" alt="">
+                            </div>
+                        </a>
+                        <a href="javascript:void(0);" class="template-block" data-temp="et2">
+                            <p>Template 2</p>
+                            <div class="temp-img-wrap">
+                                <img src="https://threshmedia.com/wp-content/uploads/2021/11/template-2.png" class="temp-copy" alt="">
+                                <img src="https://threshmedia.com/wp-content/uploads/2021/11/check-img.png" class="check-img" alt="">
+                            </div>
+                        </a>
+                        <a href="javascript:void(0);" class="template-block" data-temp="et3">
+                            <p>Template 3</p>
+                            <div class="temp-img-wrap">
+                                <img src="https://threshmedia.com/wp-content/uploads/2021/11/temp-3.png" class="temp-copy" alt="">
+                                <img src="https://threshmedia.com/wp-content/uploads/2021/11/check-img.png" class="check-img" alt="">
+                            </div>
+                        </a>
+                        <a href="javascript:void(0);" class="template-block" data-temp="et4">
+                            <p>Template 4</p>
+                            <div class="temp-img-wrap">
+                                <img src="https://threshmedia.com/wp-content/uploads/2021/11/temp-4.png" class="temp-copy" alt="">
+                                <img src="https://threshmedia.com/wp-content/uploads/2021/11/check-img.png" class="check-img" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Tab 2 -->
+                    <div id="tab-2" class="tab-content">
+                        <h3>Enter Your Details</h3>
+                        <?php session_start();?>
+                        <div class="form-input">
+                            <label>First & Last Name <span class="asterisk">*</span></label>
+                            <input type="text" class="first-name" placeholder="John Doe" name="f-name" required/>
+                        </div>
+                        <div class="form-input">
+                            <label>Job Title</label>   
+                            <input type="text" class="job-title" placeholder="Director" />
+                        </div>
+                        <div class="form-input">
+                            <label>Company Name</label>   
+                            <input type="text" class="company-name" placeholder="Threshold Media" />
+                        </div>
+                        <div class="form-input">
+                            <label>Office Phone Number</label>   
+                            <input type="tel" class="office-phone" placeholder="123 456 7890" maxlength="10"/>
+                        </div>
+                        <div class="form-input">
+                            <label>Website URL</label>   
+                            <input type="text" class="website-url" placeholder="www.threshmedia.com" />
+                        </div>
+                        <div class="form-input">
+                            <label>Email Address</label>   
+                            <input type="email" class="email" placeholder="john@doe.com" />
+                        </div>
+                        <div class="form-input">
+                            <label>Company Address (Street, City, State, Zip code)</label>   
+                            <input type="text" class="company-address" placeholder="Company Address" />
+                        </div>
+                        <div class="form-input checkbox">
+                            <input type="checkbox" class="hide-contact-icon" value="yes"/>
+                            <label class="hidec-label">Hide Contact Icons</label>   
+                        </div>
+                        <!-- Social Media -->
+                        <h3>Social Media</h3>
+                        <div class="form-input">
+                            <label>LinkedIn</label>   
+                            <input type="text" class="linkedin-link social-link" placeholder="https://www.linkedin.com" />
+                        </div>
+                        <div class="form-input">
+                            <label>Facebook</label>   
+                            <input type="text" class="facebook-link social-link" placeholder="https://www.facebook.com" />
+                        </div>
+                        <div class="form-input">
+                            <label>Twitter</label>   
+                            <input type="text" class="twitter-link social-link" placeholder="https://www.twitter.com" />
+                        </div>
+                        <div class="form-input">
+                            <label>Instagram</label>   
+                            <input type="text" class="instagram-link social-link" placeholder="https://www.instagram.com" />
+                        </div>
+                        <h3>Custom Field</h3>
+                        <div class="form-input">
+                            <label>Custom Field</label>   
+                            <input type="text" class="custom-field-text" placeholder="Bonus Field" />
+                        </div>
+                    </div>
+                    <!-- Tab 3 -->
+                    <div id="tab-3" class="tab-content">
+                        <h3>Customize Your Signature</h3>
+                        <!-- <div class="container"> -->
+                        <div id="colorval" data-color=""></div>
+                        <div id="themecolor" class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Select theme Color</label>
+                                <div class="col-sm-8">
+                                    <colorpicker :color="defaultColor" v-model="defaultColor" data-text="theme_color"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="textcolor" class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Select Text Color</label>
+                                <div class="col-sm-8">
+                                    <colorpicker :color="defaultColor" v-model="defaultColor" data-text="font_props"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="linkcolor" class="form-horizontal">
+                            <div class="form-group">
+                                <label  class="control-label">Select Link Color</label>
+                                <div class="">
+                                    <colorpicker :color="defaultColor" v-model="defaultColor" data-text="social-item" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- </div> -->
+                        <div class="form-input">
+                            <label>Select Font</label>
+                            <select name="font-type" id="font-type">
+                                <option value="Arial">Arial</option>
+                                <option value="Courier New">Courier New</option>
+                                <option value="Georgia">Georgia</option>
+                                <option value="Lucida Sans Unicode">Lucida Sans Unicode</option>
+                                <option value="Times New Roman">Times New Roman</option>
+                                <option value="Verdana">Verdana</option>
+                            </select>
+                        </div>
+                        <div class="form-input">
+                            <label>Select Font Size</label>
+                            <input type="range" class="font-size-range" min="14" max="18" id="o" value="14" step="2">
+                            <output for "range" id="pointSize">Small</output>
+                        </div>
+                    </div>
+                    <!-- Tab 4 -->
+                    <div id="tab-4" class="tab-content">
+                        <h3>Upload Your Signature Images</h3>
+                        <div class="form-input">
+                            <label>Company Logo</label>
+                            <input type="text" class="company-logo" placeholder="https://example.com/images/myphoto.jpg" />
+                        </div>
+                        <!-- <div class="form-input">
+                            <label>Profile Picture</label>
+                            <input type="text" class="profile-picture" placeholder="https://example.com/images/myphoto.jpg" />
+                            </div> -->
+                    </div>
+                </div>
+                <div class="second-step-block">
+                    <input type="text" value="" id="input" style="display: none;">
+                    <a href="javascript:void(0);" class="copy-btn" id="copy_signaure">Copy Signature</a>
+                    <a href="javascript:void(0);" class="copy-btn" onclick="copy_html_code('.email-template.active')">Copy HTML Code</a>
+                    <a href="javascript:void(0);" class="copy-btn social-modal" data-social="gmail_content">
+                        <p>Add to Gmail</p>
+                        <img src="https://threshmedia.com/wp-content/uploads/2021/11/gmail-icon.png" alt="">
+                    </a>
+                    <a href="javascript:void(0);" class="copy-btn social-modal" data-social="outlook_content">
+                        <p>Add to Outlook</p>
+                        <img src="https://threshmedia.com/wp-content/uploads/2021/11/outlook-icon.png" alt="">
+                    </a>
+                    <a href="javascript:void(0);" onclick="backtoeditor()" class="back-to-editor">< Back to Editor</a>
+                </div>
+            </div>
+            <div class="sign-preview">
+                <div class="preview-top">
+                    <h4>Email Signature Generator</h4>
+                    <div class="notification-wrap">
+                    </div>
+                </div>
+                <div class="preview-signature">
+                    <div class="black-border">
+                        <div class="red-dot bar-circle"></div>
+                        <div class="yellow-dot bar-circle"></div>
+                        <div class="green-dot bar-circle"></div>
+                    </div>
+                    <div class="layout-lists">
+                        <div class="email-template active" id="et1">
+                            <table cellpadding="0" cellspacing="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial;">
+                                <style>
+                                    a {
+                                    text-decoration: none !important;
+                                    }
+                                    
+                                </style>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <table cellpadding="0" cellspacing="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; ">
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="vertical-align: center;">
+                                                            <table cellpadding="0" cellspacing="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; ">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td style="text-align: center;" colspan="4"><img id="company_logo" class="company_logo" role="presentation" src="http://threshmedia.com/wp-content/uploads/2021/11/company-logo.png" style="max-width: 130px; display: inline-block;margin: 0 auto 10px;" width="130"></td>
+                                                                    </tr>
+                                                                    <tr style="display:flex; justify-content: center;">
+                                                                        <td style="padding: 0 5px;">
+                                                                            <a href="#" target="_blank" class="linkedin-icon social-item">
+                                                                            <img src="http://threshmedia.com/wp-content/uploads/2021/11/linkedin-icon-2x.png" alt="">
+                                                                            </a>
+                                                                        </td>
+                                                                        <td style="padding: 0 5px;">
+                                                                            <a href="#" target="_blank" class="facebook-icon social-item">
+                                                                            <img src="http://threshmedia.com/wp-content/uploads/2021/11/facebook-icon-2x.png" alt="">
+                                                                            </a>
+                                                                        </td>
+                                                                        <td style="padding: 0 5px;">
+                                                                            <a href="#" target="_blank" class="twitter-icon social-item">
+                                                                            <img src="http://threshmedia.com/wp-content/uploads/2021/11/twitter-icon-2x.png" alt="">
+                                                                            </a>
+                                                                        </td>
+                                                                        <td style="padding: 0 5px;">
+                                                                            <a href="#" target="_blank" class="instagram-icon social-item">
+                                                                            <img src="http://threshmedia.com/wp-content/uploads/2021/11/instagram-icon-2x.png" alt="">
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                        <td width="12">
+                                                            <div></div>
+                                                        </td>
+                                                        <td width="1" class="border-right-theme" style="height: 100%; width: 1px; border-right: 1px solid rgb(46, 181, 234);">
+                                                            <div></div>
+                                                        </td>
+                                                        <td width="12">
+                                                            <div></div>
+                                                        </td>
+                                                        <td style="padding: 0px; vertical-align: middle;">
+                                                            <!-- <img id="company_logo" class="profile_picture " role="presentation" src="http://threshmedia.com/wp-content/uploads/2021/11/profile-icon.png" style="max-width: 130px; display: block; margin: 0 auto 10px;" width="130"> -->
+                                                            <h3 class="first_last-name font_props" style="margin:0; color:#000;font-size:16px; text-align:center;">Robbie Crenshaw</h3>
+                                                            <p id="job_title" class="job_title font_props" style="margin: 0px; color: #000; font-size: 14px; line-height: 22px;text-align:center;">Web Developer</p>
+                                                            <p id="company_name" class="company_name font_props" style="margin: 0px; font-weight: 500; color: #000; font-size: 14px; line-height: 22px; text-align:center;">Threshold Media</p>
+                                                            <p id="custom_field" class="custom_field font_props" style="display:none;margin: 0px; font-weight: 500; color: #000; font-size: 14px; line-height: 22px; text-align:center;"></p>
+                                                            <table cellpadding="0" cellspacing="0" style="vertical-align: -webkit-baseline-middle; font-size: medium;  width: 100%;">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td height="10"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td height="1" class="border-btm-theme" style="width: 100%; border-bottom: 1px solid rgb(46, 181, 234); border-left: none; display: block;"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td height="10"></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <table cellpadding="0" cellspacing="0" style="vertical-align: -webkit-baseline-middle; font-size: medium;  text-align: left;">
+                                                                <tbody>
+                                                                    <tr style="vertical-align: middle;" class="social-icon-row company_number_img">
+                                                                        <td style="vertical-align: middle;" width="30" class="social-icon-td">
+                                                                            <table cellpadding="0" cellspacing="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; ">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td style="vertical-align: bottom;"><span style="display: block;"><img id="phone_icon" class="image-theme company_number_img" src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/phone-icon-2x.png" style="display: block; background-color: rgb(46, 181, 234);" width="13"></span></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                        <td style="padding: 0px; color: rgb(0, 0, 0);">
+                                                                            <a id="company_number" class="company_number font_props" href="tel:555-555-5555" style="text-decoration: none; color: rgb(0, 0, 0); font-size: 12px; line-height: 20px;text-decoration: none;">555-555-5555</a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr style="vertical-align: middle;" class="personal_email_img">
+                                                                        <td style="vertical-align: middle;" width="30" class="social-icon-td">
+                                                                            <table cellpadding="0" cellspacing="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; ">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td style="vertical-align: bottom;"><span style="display: block;"><img id="email_icon" class="image-theme personal_email_img" src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/email-icon-2x.png" style="display: block; background-color: rgb(46, 181, 234);" width="13"></span></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                        <td style="padding: 0px;">
+                                                                            <a id="personal_email" class="personal_email font_props" href="mailto:rcrenshaw@thresholdmedia.com" style="text-decoration: none; color: rgb(0, 0, 0); font-size: 12px; line-height: 20px; text-decoration: none;">rcrenshaw@thresholdmedia.com</a> 
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr style="vertical-align: middle;" class="website_url_img">
+                                                                        <td style="vertical-align: middle;" width="30" class="social-icon-td">
+                                                                            <table cellpadding="0" cellspacing="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; ">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td style="vertical-align: bottom;"><span style="display: block;">
+                                                                                            <img id="website_icon" class="image-theme website_url_img" src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/link-icon-2x.png" style="display: block; background-color: rgb(46, 181, 234);" width="13"></span>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                        <td style="padding: 0px;">
+                                                                            <a id="website_url" target="_blank" class="website_url font_props" href="https://thresholdmedia.com/" style=" text-decoration: none; color: rgb(0, 0, 0); font-size: 12px; line-height: 20px; text-decoration: none;">https://thresholdmedia.com/</a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr style="vertical-align: middle;" class="user_address_img">
+                                                                        <td style="vertical-align: middle;" width="30" class="social-icon-td">
+                                                                            <table cellpadding="0" cellspacing="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; ">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td style="vertical-align: bottom;"><span style="display: block;">
+                                                                                            <img id="website_icon" class="image-theme user_address_img" src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/address-icon-2x.png" style="display: block; background-color: rgb(46, 181, 234);" width="13"></span>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                        <td style="padding: 0px;font-size: 12px;">
+                                                                            <span id="website_url" target="_blank" class="user_address font_props" style="text-decoration: none; color: rgb(0, 0, 0); font-size: 12px; line-height: 20px; text-decoration: none;">Sant Marine, San Fransisco, CA</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <table cellpadding="0" cellspacing="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; ">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td height="10"></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="email-template" id="et2">
+                            <table cellpadding="0" cellspacing="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial; width: 420px;">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <table cellpadding="0" cellspacing="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial; width: 100%;">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <h3 style="margin: 0px; font-size: 18px; color: rgb(0, 0, 0);"><span>Robbie</span><span>&nbsp;</span><span>Crenshaw</span></h3>
+                                                            <p style="margin: 0px; padding-top: 5px; color: rgb(0, 0, 0); font-size: 14px; line-height: 22px;"><span>Web Developer</span></p>
+                                                            <p style="margin: 0px; font-weight: 500; color: rgb(0, 0, 0); font-size: 14px; line-height: 22px;"><span>Threshold Media</span></p>
+                                                            <p style="color: rgb(0, 0, 0); margin: 0px; font-size: 14px; line-height: 22px;"><span>Custom Field</span></p>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="15"></td>
+                                    </tr>
+                                    <tr>
+                                        <td height="1" style="width: 100%; border-bottom: 1px solid rgb(84, 90, 242); border-left: none; display: block;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td height="15"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <table cellpadding="0" cellspacing="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial;">
+                                                <tbody>
+                                                    <tr style="vertical-align: middle;">
+                                                        <td style="vertical-align: middle;" width="25">
+                                                            <table cellpadding="0" cellspacing="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial;">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td style="vertical-align: bottom;"><span style="display: block; background-color: rgb(84, 90, 242);"><img src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/phone-icon-2x.png" style="display: block; background-color: rgb(84, 90, 242);" width="13"></span></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                        <td style="padding: 0px; color: rgb(0, 0, 0);">
+                                                            <a href="tel:555-555-5555" style="text-decoration: none; color: rgb(0, 0, 0); font-size: 12px;"><span>555-555-5555</span></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr style="vertical-align: middle;">
+                                                        <td style="vertical-align: middle; padding-top: 5px;" width="25">
+                                                            <table cellpadding="0" cellspacing="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial;">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td style="vertical-align: bottom;"><span style="display: block; background-color: rgb(84, 90, 242);"><img src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/email-icon-2x.png" style="display: block; background-color: rgb(84, 90, 242);" width="13"></span></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                        <td style="padding-top: 5px;">
+                                                            <a href="mailto:rcrenshaw@thresholdmedia.com" style="text-decoration: none; color: rgb(0, 0, 0); font-size: 12px;"><span>rcrenshaw@thresholdmedia.com</span></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr style="vertical-align: middle;">
+                                                        <td style="vertical-align: middle; padding-top: 5px;" width="25">
+                                                            <table cellpadding="0" cellspacing="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial;">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td style="vertical-align: bottom;"><span style="display: block; background-color: rgb(84, 90, 242);"><img src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/link-icon-2x.png" style="display: block; background-color: rgb(84, 90, 242);" width="13"></span></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                        <td style="padding-top: 5px;">
+                                                            <a href="//www.thresholdmedia.com" style="text-decoration: none; color: rgb(0, 0, 0); font-size: 12px;"><span>www.thresholdmedia.com</span></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr style="vertical-align: middle;">
+                                                        <td style="vertical-align: middle; padding-top: 5px;" width="25">
+                                                            <table cellpadding="0" cellspacing="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial;">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td style="vertical-align: bottom;"><span style="display: block; background-color: rgb(84, 90, 242);"><img src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/address-icon-2x.png" style="display: block; background-color: rgb(84, 90, 242);" width="13"></span></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                        <td style="padding-top: 5px;"><span style="font-size: 12px; color: rgb(0, 0, 0);"><span>address, test, test</span></span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="15"></td>
+                                    </tr>
+                                    <tr>
+                                        <td height="1" style="width: 100%; border-bottom: 1px solid rgb(84, 90, 242); border-left: none; display: block;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td height="15"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <table cellpadding="0" cellspacing="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial; width: 100%;">
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="vertical-align: top;"><img role="presentation" src="https://thresholdframework.kinsta.cloud/wp-content/uploads/2021/09/Thredhold_Media_logo.png" style="max-width: 130px; display: inline; text-align: left;" width="130"></td>
+                                                        <td style="vertical-align: top; text-align: right;">
+                                                            <table cellpadding="0" cellspacing="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial; display: inline-block;">
+                                                                <tbody>
+                                                                    <tr style="text-align: right;">
+                                                                        <td>
+                                                                            <a href="//#" style="display: inline-block; padding: 0px; background-color: #4553A3;"><img alt="facebook" height="24" src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/facebook-icon-2x.png" style="background-color: #4553A3; max-width: 135px; display: block;"></a>
+                                                                        </td>
+                                                                        <td width="5">
+                                                                            <div></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a href="//#" style="display: inline-block; padding: 0px; background-color: #4553A3;"><img alt="twitter" height="24" src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/twitter-icon-2x.png" style="background-color: #4553A3; max-width: 135px; display: block;"></a>
+                                                                        </td>
+                                                                        <td width="5">
+                                                                            <div></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a href="//#" style="display: inline-block; padding: 0px; background-color: #4553A3;"><img alt="linkedin" height="24" src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/linkedin-icon-2x.png" style="background-color: #4553A3; max-width: 135px; display: block;"></a>
+                                                                        </td>
+                                                                        <td width="5">
+                                                                            <div></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a href="//#" style="display: inline-block; padding: 0px; background-color: #4553A3;"><img alt="instagram" height="24" src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/instagram-icon-2x.png" style="background-color: #4553A3; max-width: 135px; display: block;"></a>
+                                                                        </td>
+                                                                        <td width="5">
+                                                                            <div></div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="30"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="email-template" id="et3">
+                            <table cellpadding="0" cellspacing="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial;">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <table cellpadding="0" cellspacing="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial;">
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="vertical-align: middle;">
+                                                            <h3 style="margin: 0px; font-size: 18px; color: rgb(0, 0, 0);"><span>Robbie</span><span>&nbsp;</span><span>Crenshaw</span></h3>
+                                                            <p style="margin: 0px; padding-top: 6px; color: rgb(0, 0, 0); font-size: 14px; line-height: 18px;"><span>Web Developer</span></p>
+                                                            <p style="margin: 0px; font-weight: 500; color: rgb(0, 0, 0); font-size: 14px; line-height: 18px;"><span>Threshold Media</span></p>
+                                                            <p style="color: rgb(0, 0, 0); margin: 0px; font-size: 14px; line-height: 18px;"><span>Custom Field</span></p>
+                                                        </td>
+                                                        <td width="30">
+                                                            <div style="width: 30px;"></div>
+                                                        </td>
+                                                        <td style="width: 1px; border-bottom: none; border-left: 1px solid rgb(84, 90, 242);" width="1"></td>
+                                                        <td width="30">
+                                                            <div style="width: 30px;"></div>
+                                                        </td>
+                                                        <td style="vertical-align: middle;">
+                                                            <table cellpadding="0" cellspacing="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial;">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td width="20" style="padding-top: 5px;">
+                                                                            <table cellpadding="0" cellspacing="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial;">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td style="vertical-align: bottom;"><span style=" display: block; background-color: rgb(84, 90, 242);"><img src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/phone-icon-2x.png" style="display: block; background-color: rgb(84, 90, 242);" width="13"></span></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                        <td style="vertical-align: bottom; padding: 0px; color: rgb(0, 0, 0); padding-top: 5px;">
+                                                                            <a href="tel:555-555-5555" style="text-decoration: none; color: rgb(0, 0, 0); font-size: 12px;"><span>555-555-5555</span></a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td width="20" style="padding-top: 5px;">
+                                                                            <table cellpadding="0" cellspacing="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial;">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td style="vertical-align: bottom;"><span style="display: block; background-color: rgb(84, 90, 242);"><img src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/email-icon-2x.png" style="display: block; background-color: rgb(84, 90, 242);" width="13"></span></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                        <td style="padding-top: 5px;">
+                                                                            <a href="mailto:rcrenshaw@thresholdmedia.com" style="text-decoration: none; color: rgb(0, 0, 0); font-size: 12px;"><span>rcrenshaw@thresholdmedia.com</span></a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td width="20" style="padding-top: 5px;">
+                                                                            <table cellpadding="0" cellspacing="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial;">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td style="vertical-align: bottom;"><span style="display: block; background-color: rgb(84, 90, 242);"><img src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/link-icon-2x.png" style="display: block; background-color: rgb(84, 90, 242);" width="13"></span></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                        <td style="padding-top: 5px;">
+                                                                            <a href="//www.thresholdmedia.com" style="text-decoration: none; color: rgb(0, 0, 0); font-size: 12px;"><span>www.thresholdmedia.com</span></a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td width="20" style="padding-top: 5px;">
+                                                                            <table cellpadding="0" cellspacing="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial;">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td style="vertical-align: bottom;"><span style="display: block; background-color: rgb(84, 90, 242);"><img src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/address-icon-2x.png" style="display: block; background-color: rgb(84, 90, 242);" width="13"></span></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                        <td style="padding-top: 5px;"><span style="font-size: 12px; color: rgb(0, 0, 0);"><span>address, test, test</span></span></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <table cellpadding="0" cellspacing="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial; width: 100%;">
+                                                <tbody>
+                                                    <tr>
+                                                        <td height="15"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td height="1" style="width: 100%; border-bottom: 1px solid rgb(84, 90, 242); border-left: none; display: block;"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td height="15"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <table cellpadding="0" cellspacing="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial; width: 100%;">
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="vertical-align: top;"><img role="presentation" src="https://thresholdframework.kinsta.cloud/wp-content/uploads/2021/09/Thredhold_Media_logo.png" style="max-width: 130px; display: inline-block;" width="130"></td>
+                                                        <td style="text-align: right; vertical-align: top;">
+                                                            <table cellpadding="0" cellspacing="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial; display: inline-block;">
+                                                                <tbody>
+                                                                    <tr style="text-align: right;">
+                                                                        <td>
+                                                                            <a href="//#" style="display: inline-block; padding: 0px; background-color: #4553A3;"><img alt="facebook" height="24" src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/facebook-icon-2x.png" style="background-color: #4553A3; max-width: 135px; display: block;"></a>
+                                                                        </td>
+                                                                        <td width="5">
+                                                                            <div></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a href="//#" style="display: inline-block; padding: 0px; background-color: #4553A3;"><img alt="twitter" height="24" src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/twitter-icon-2x.png" style="background-color: #4553A3; max-width: 135px; display: block;"></a>
+                                                                        </td>
+                                                                        <td width="5">
+                                                                            <div></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a href="//#" style="display: inline-block; padding: 0px; background-color: #4553A3;"><img alt="linkedin" height="24" src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/linkedin-icon-2x.png" style="background-color: #4553A3; max-width: 135px; display: block;"></a>
+                                                                        </td>
+                                                                        <td width="5">
+                                                                            <div></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a href="//#" style="display: inline-block; padding: 0px; background-color: #4553A3;"><img alt="instagram" height="24" src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/instagram-icon-2x.png" style="background-color: #4553A3; max-width: 135px; display: block;"></a>
+                                                                        </td>
+                                                                        <td width="5">
+                                                                            <div></div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="30"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="email-template" id="et4">
+                            <table cellpadding="0" cellspacing="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial; min-width: 450px;">
+                                <tbody>
+                                    <tr style="text-align: left;">
+                                        <td>
+                                            <h3 style="margin: 0px; font-size: 18px; color: rgb(0, 0, 0);"><span>Robbie</span><span>&nbsp;</span><span>Crenshaw</span></h3>
+                                            <p style="margin: 0px; padding-top: 5px; color: rgb(0, 0, 0); font-size: 14px; line-height: 20px;"><span>Web Developer</span></p>
+                                            <p style="margin: 0px; font-weight: 500; color: rgb(0, 0, 0); font-size: 14px; line-height: 20px;"><span>Threshold Media</span></p>
+                                            <p style="color: rgb(0, 0, 0); margin: 0px; font-size: 14px; line-height: 20px;"><span>Custom Field</span></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <table cellpadding="0" cellspacing="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial; width: 100%;">
+                                                <tbody>
+                                                    <tr>
+                                                        <td height="20"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td height="1" style="width: 100%; border-bottom: 1px solid rgb(84, 90, 242); border-left: none; display: block;"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td height="20"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <table cellpadding="0" cellspacing="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial; width: 100%;">
+                                                <tbody>
+                                                    <tr style="vertical-align: middle;">
+                                                        <td>
+                                                            <table cellpadding="0" cellspacing="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial;">
+                                                                <tbody>
+                                                                    <tr style="vertical-align: middle;">
+                                                                        <td style="vertical-align: middle;" width="30">
+                                                                            <table cellpadding="0" cellspacing="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial;">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td style="vertical-align: bottom;"><span style="display: block; background-color: rgb(84, 90, 242);"><img src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/phone-icon-2x.png" style="display: block; background-color: rgb(84, 90, 242);" width="13"></span></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                        <td style="padding: 0px; color: rgb(0, 0, 0);">
+                                                                            <a href="tel:555-555-5555" style="text-decoration: none; color: rgb(0, 0, 0); font-size: 12px;"><span>555-555-5555</span></a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr style="vertical-align: middle;">
+                                                                        <td style="vertical-align: middle;" width="30">
+                                                                            <table cellpadding="0" cellspacing="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial;">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td style="vertical-align: bottom;"><span style="display: block; background-color: rgb(84, 90, 242);"><img src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/email-icon-2x.png" style="display: block; background-color: rgb(84, 90, 242);" width="13"></span></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                        <td style="padding: 0px;">
+                                                                            <a href="mailto:rcrenshaw@thresholdmedia.com" style="text-decoration: none; color: rgb(0, 0, 0); font-size: 12px;"><span>rcrenshaw@thresholdmedia.com</span></a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr style="vertical-align: middle;">
+                                                                        <td style="vertical-align: middle;" width="30">
+                                                                            <table cellpadding="0" cellspacing="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial;">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td style="vertical-align: bottom;"><span style="display: block; background-color: rgb(84, 90, 242);"><img src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/link-icon-2x.png" style="display: block; background-color: rgb(84, 90, 242);" width="13"></span></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                        <td style="padding: 0px;">
+                                                                            <a href="//www.thresholdmedia.com" style="text-decoration: none; color: rgb(0, 0, 0); font-size: 12px;"><span>www.thresholdmedia.com</span></a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr style="vertical-align: middle;">
+                                                                        <td style="vertical-align: middle;" width="30">
+                                                                            <table cellpadding="0" cellspacing="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial;">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td style="vertical-align: bottom;"><span style="display: block; background-color: rgb(84, 90, 242);"><img src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/address-icon-2x.png" style="display: block; background-color: rgb(84, 90, 242);" width="13"></span></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                        <td style="padding: 0px;"><span style="font-size: 12px; color: rgb(0, 0, 0);"><span>address, test, test</span></span></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                        <td width="15">
+                                                            <div></div>
+                                                        </td>
+                                                        <td style="text-align: right;">
+                                                            <table cellpadding="0" cellspacing="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial; width: 100%;">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td><img role="presentation" src="https://thresholdframework.kinsta.cloud/wp-content/uploads/2021/09/Thredhold_Media_logo.png" style="max-width: 130px; display: inline-block;" width="130"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td height="10"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <table cellpadding="0" cellspacing="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial; display: inline-block;">
+                                                                                <tbody>
+                                                                                    <tr style="text-align: right;">
+                                                                                        <td>
+                                                                                            <a href="//#" style="display: inline-block; padding: 0px; background-color: #4553A3;"><img alt="facebook" height="24" src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/facebook-icon-2x.png" style="background-color: #4553A3; max-width: 135px; display: block;"></a>
+                                                                                        </td>
+                                                                                        <td width="5">
+                                                                                            <div></div>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <a href="//#" style="display: inline-block; padding: 0px; background-color: #4553A3;"><img alt="twitter" height="24" src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/twitter-icon-2x.png" style="background-color: #4553A3; max-width: 135px; display: block;"></a>
+                                                                                        </td>
+                                                                                        <td width="5">
+                                                                                            <div></div>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <a href="//#" style="display: inline-block; padding: 0px; background-color: #4553A3;"><img alt="linkedin" height="24" src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/linkedin-icon-2x.png" style="background-color: #4553A3; max-width: 135px; display: block;"></a>
+                                                                                        </td>
+                                                                                        <td width="5">
+                                                                                            <div></div>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <a href="//#" style="display: inline-block; padding: 0px; background-color: #4553A3;"><img alt="instagram" height="24" src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/instagram-icon-2x.png" style="background-color: #4553A3; max-width: 135px; display: block;"></a>
+                                                                                        </td>
+                                                                                        <td width="5">
+                                                                                            <div></div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <table cellpadding="0" cellspacing="0" style="vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial; width: 100%;">
+                                                <tbody>
+                                                    <tr>
+                                                        <td height="20"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td height="1" style="width: 100%; border-bottom: 1px solid rgb(84, 90, 242); border-left: none; display: block;"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td height="30"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- <a href="javascript:void(0)" id="sign-create" onclick="copyToClipboard('.email-template.active')">Create Signature</a> -->
+                    <a href="javascript:void(0)" id="sign-create" onclick="sign_create()">Create Signature</a>
+                </div>
+                <div class="preview-footer">
+                    <a href="javascript:void(0)" id="clear_fields">Clear All Fields (start over)</a>				
+                </div>
+            </div>
+        </div>
+        <div id="gmail_content" style="display:none;">
+            <h3>How do I add my new email signature to Gmail?</h3>
+            <ol>
+                <li>Log in to your Gmail account, then click the cog in the top right corner.</li>
+                <li>Select Settings from the drop down menu.</li>
+                <li>Scroll down until you reach the email signature editor, then paste your new email signature there.</li>
+                <li>Scroll to the bottom of the page and click 'save changes’.</li>
+            </ol>
+        </div>
+        <div id="outlook_content" style="display:none;">
+            <h3>How do I add my new email signature to Outlook?</h3>
+            <ol>
+                <li>Log in to your Outlook account and select the Home Tab&gt; New Email</li>
+                <li>Click the Message tab</li>
+                <li>In the Include group section, select Signature &gt; Signatures</li>
+                <li>In the Choose Default Signature section, be sure to select the account you would like to associate with the signature from the e-mail account dropdown</li>
+                <li>In the Select Signature to Edit section, click the New button and name your signature</li>
+                <li>In the Edit Signature section, paste in your HubSpot generated signature and select OK</li>
+            </ol>
+        </div>
+        <div class="modal modal-wrap">
+            <div class="content">
+                <a href="javascript:void(0);" class="cancel">X</a>
+                <div class="modal-content ">                    
+                </div>
+            </div>
+        </div>
+        <!-- Scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="assets/js/scripts.js"></script>
+    </body>
+</html>
